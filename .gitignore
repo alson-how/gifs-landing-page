@@ -149,9 +149,8 @@ Thumbs.db
 *~
 
 # Docker
-.dockerignore
-Dockerfile*
-docker-compose*.yml
+# Note: Keep docker-compose.yml and docker-compose.prod.yml in repo
+# .dockerignore
 
 # SSL certificates
 ssl/

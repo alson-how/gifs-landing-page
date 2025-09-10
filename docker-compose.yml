@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  logistics-app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      # EmailJS Configuration - Set these in your .env file or override here
+      - EMAILJS_SERVICE_ID=${EMAILJS_SERVICE_ID}
+      - EMAILJS_TEMPLATE_ID=${EMAILJS_TEMPLATE_ID}
+      - EMAILJS_PUBLIC_KEY=${EMAILJS_PUBLIC_KEY}
+      - EMAILJS_PRIVATE_KEY=${EMAILJS_PRIVATE_KEY}
+      - TO_EMAIL=${TO_EMAIL}
+    volumes:
+      - app-data:/usr/src/app/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/health', (res) => { if (res.statusCode !== 200) process.exit(1); res.on('data', () => {}); res.on('end', () => process.exit(0)); }).on('error', () => process.exit(1))"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - logistics-network
+
+  # Optional: Add nginx reverse proxy for production
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - logistics-app
+    restart: unless-stopped
+    networks:
+      - logistics-network
+    profiles:
+      - production
+
+volumes:
+  app-data:
+    driver: local
+
+networks:
+  logistics-network:
+    driver: bridge
