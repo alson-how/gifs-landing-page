@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logistics AI Platform - Pricing Proposal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Cover Page */
+        .cover-page {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            page-break-after: always;
+        }
+
+        .cover-page h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .cover-page .subtitle {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cover-page .date {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-top: 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 60px;
+            page-break-inside: avoid;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 1.5em;
+            margin: 30px 0 20px 0;
+        }
+
+        .executive-summary {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .executive-summary h2 {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Cards */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid #667eea;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-top-color: #764ba2;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .pricing-card h3 {
+            color: inherit;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        .price .currency {
+            font-size: 0.6em;
+            vertical-align: super;
+        }
+
+        .price .period {
+            font-size: 0.4em;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+
+        .early-bird {
+            background: #11daca;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .features li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .features li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .featured .features li:before {
+            color: white;
+        }
+
+        .featured .features li {
+            border-bottom-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Value Props */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .value-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+        }
+
+        .value-card h4 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .value-card.alt-1 {
+            background: linear-gradient(135deg, #536de9 0%, #5a8cb3 100%)
+        }
+
+        .value-card.alt-2 {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+
+        .value-card.alt-3 {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #333;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-date {
+            /* min-width: 120px; */
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .timeline-content {
+            background: #f5f7fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-left: 30px;
+            flex: 1;
+        }
+
+        /* ROI Section */
+        .roi-calculator {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .roi-calculator h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .roi-item {
+            text-align: center;
+        }
+
+        .roi-number {
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .roi-label {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        /* Form Styles */
+        .form-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin: 60px 0;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #5a8cb3;
+            box-shadow: 0 0 0 3px rgba(90, 140, 179, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin: 20px 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            margin-right: 10px;
+            margin-top: 5px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .pricing-interest {
+            margin: 30px 0;
+        }
+
+        .pricing-interest h4 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .pricing-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .pricing-option {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-option:hover {
+            border-color: #5a8cb3;
+            background: rgba(90, 140, 179, 0.05);
+        }
+
+        .pricing-option input[type="radio"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .pricing-option label {
+            cursor: pointer;
+            font-weight: 500;
+            color: #333;
+            margin: 0;
+        }
+
+        .pricing-option.selected {
+            border-color: #5a8cb3;
+            background: rgba(90, 140, 179, 0.1);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #5a8cb3 0%, #536de9 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(90, 140, 179, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            text-align: center;
+            color: #666;
+            margin-top: 30px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .form-note strong {
+            color: #5a8cb3;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, #5a8cb3 0%, #536de9 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+
+        /* Print Styles */
+        @media print {
+            .pricing-card {
+                break-inside: avoid;
+            }
+
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>LogisticAI Platform</h1>
+        <p class="subtitle">AI-Powered Logistics Management Solution</p>
+        <div>
+            <span class="badge">🤖 AI Chatbot</span>
+            <span class="badge">📊 Lead Scoring</span>
+            <span class="badge">🚚 Operations Management</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Executive Summary -->
+        <div class="executive-summary">
+            <h2>Executive Summary</h2>
+            <p style="font-size: 1.2em; margin-bottom: 20px;">
+                Transform your logistics business with Malaysia's first AI-powered logistics platform that combines
+                intelligent customer engagement, automated quotation generation, and comprehensive lead management.
+            </p>
+            <!-- <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+                <div>
+                    <h4 style="color: #667eea;">🎯 Target Market</h4>
+                    <p>Malaysian logistics companies seeking digital transformation</p>
+                </div>
+                <div>
+                    <h4 style="color: #667eea;">💰 Investment Range</h4>
+                    <p>RM1,499 - RM5,599/month</p>
+                </div>
+                <div>
+                    <h4 style="color: #667eea;">📈 Expected ROI</h4>
+                    <p>3-5x within 12 months</p>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- Product Overview -->
+        <div class="section">
+            <h2>Product Overview</h2>
+            <p style="font-size: 1.1em; margin-bottom: 30px;">
+                Our platform revolutionizes logistics operations through AI-powered automation, enabling 24/7 customer
+                engagement, instant quotation generation, and intelligent lead management.
+            </p>
+
+            <h3>Core Components</h3>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h4>🤖 AI Chatbot Engine</h4>
+                    <p>Intelligent chatbot that learns your company profile, handles customer inquiries, and generates
+                        accurate quotations automatically.</p>
+                </div>
+                <div class="value-card alt-1">
+                    <h4>📊 Lead Management System</h4>
+                    <p>Advanced lead scoring and qualification system that prioritizes high-value opportunities and
+                        tracks conversion metrics.</p>
+                </div>
+                <div class="value-card alt-2">
+                    <h4>🚚 Operations Management</h4>
+                    <p>Seamless handover from sales to operations with task tracking, status updates, and performance
+                        analytics.</p>
+                </div>
+                <div class="value-card alt-3">
+                    <h4>📱 Multi-Channel Integration</h4>
+                    <p>Direct integration with WhatsApp and Telegram for instant quotation delivery and customer
+                        communication.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pricing Tiers -->
+        <div class="section">
+            <h2>Pricing Tiers</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>BASIC</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Perfect for small forwarders</p>
+                    <div class="early-bird">Early Bird: RM1,499</div>
+                    <div class="price">
+                        <span class="currency">RM</span>1,999
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li>AI Chatbot on Microsite</li>
+                        <li>Auto Quotation Generation</li>
+                        <li>WhatsApp/Telegram Delivery</li>
+                        <li>Basic Analytics Dashboard</li>
+                        <li>100k AI Tokens/Month</li>
+                        <li>Up to 20 Quotations/Month</li>
+                        <li>Email Support (48hr)</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured">
+                    <h3>PROFESSIONAL</h3>
+                    <p style="margin-bottom: 20px;">Most Popular Choice</p>
+                    <div class="early-bird">Early Bird: RM2,799</div>
+                    <div class="price">
+                        <span class="currency">RM</span>3,499
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li>Everything in Basic</li>
+                        <li>Lead Management System</li>
+                        <li>AI Lead Scoring</li>
+                        <li>Sales Pipeline Tracking</li>
+                        <li>250k AI Tokens/Month</li>
+                        <li>Up to 50 Quotations/Month</li>
+                        <li>Priority Email Support (24hr)</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>BUSINESS</h3>
+                    <p style="color: #666; margin-bottom: 20px;">For growing companies</p>
+                    <div class="early-bird">Early Bird: RM3,999</div>
+                    <div class="price">
+                        <span class="currency">RM</span>4,999
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li>Everything in Professional</li>
+                        <li>Operations Management</li>
+                        <li>Task Management System</li>
+                        <li>Status Tracking</li>
+                        <li>400k AI Tokens/Month</li>
+                        <li>Up to 80 Quotations/Month</li>
+                        <li>Email + Phone Support</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>ENTERPRISE</h3>
+                    <p style="color: #666; margin-bottom: 20px;">Complete transformation</p>
+                    <div class="early-bird">Early Bird: RM5,599</div>
+                    <div class="price">
+                        <span class="currency">RM</span>6,999
+                        <span class="period">/month</span>
+                    </div>
+                    <ul class="features">
+                        <li>All Features Included</li>
+                        <li>Multiple User Roles</li>
+                        <li>Advanced Analytics</li>
+                        <li>API Access</li>
+                        <li>Unlimited AI Tokens</li>
+                        <li>Unlimited Quotations</li>
+                        <li>Dedicated Account Manager</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Projections -->
+        <!-- <div class="section">
+            <h2>Financial Analysis</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Monthly Price</th>
+                        <th>Gross Margin</th>
+                        <th>Net Profit Margin</th>
+                        <th>Break-even</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic</td>
+                        <td>RM1,999</td>
+                        <td>90%</td>
+                        <td>25%</td>
+                        <td>1 customer</td>
+                    </tr>
+                    <tr>
+                        <td>Professional</td>
+                        <td>RM3,499</td>
+                        <td>93%</td>
+                        <td>28%</td>
+                        <td>1 customer</td>
+                    </tr>
+                    <tr>
+                        <td>Business</td>
+                        <td>RM4,999</td>
+                        <td>94%</td>
+                        <td>30%</td>
+                        <td>1 customer</td>
+                    </tr>
+                    <tr>
+                        <td>Enterprise</td>
+                        <td>RM6,999</td>
+                        <td>94%</td>
+                        <td>32%</td>
+                        <td>1 customer</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Revenue Projections</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Timeline</th>
+                        <th>Customer Mix</th>
+                        <th>Monthly Revenue</th>
+                        <th>Monthly Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Month 3</td>
+                        <td>3 Basic, 2 Professional</td>
+                        <td>RM10,995</td>
+                        <td>RM2,199</td>
+                    </tr>
+                    <tr>
+                        <td>Month 6</td>
+                        <td>5 Basic, 4 Professional, 2 Business</td>
+                        <td>RM29,991</td>
+                        <td>RM7,497</td>
+                    </tr>
+                    <tr>
+                        <td>Month 12</td>
+                        <td>8 Basic, 8 Professional, 5 Business, 2 Enterprise</td>
+                        <td>RM78,979</td>
+                        <td>RM19,745</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+
+        <!-- ROI Calculator -->
+        <!-- <div class="roi-calculator">
+            <h3>Expected ROI for Your Customers</h3>
+            <p style="font-size: 1.1em; opacity: 0.95;">Based on industry averages and early adopter feedback</p>
+            <div class="roi-grid">
+                <div class="roi-item">
+                    <div class="roi-number">75%</div>
+                    <div class="roi-label">Faster Response Time</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">3x</div>
+                    <div class="roi-label">More Leads Captured</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">40%</div>
+                    <div class="roi-label">Higher Conversion Rate</div>
+                </div>
+                <div class="roi-item">
+                    <div class="roi-number">10hrs</div>
+                    <div class="roi-label">Saved Per Week</div>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Implementation Timeline -->
+        <div class="section">
+            <h2>Implementation Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Day 1-3</div>
+                    <div class="timeline-content">
+                        <h4>Setup & Configuration</h4>
+                        <p>Company profile setup, AI training on your business data, microsite customization</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Day 4-7</div>
+                    <div class="timeline-content">
+                        <h4>Integration</h4>
+                        <p>WhatsApp/Telegram connection, quotation template configuration, workflow setup</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 2</div>
+                    <div class="timeline-content">
+                        <h4>Training & Testing</h4>
+                        <p>Team training sessions, system testing, fine-tuning AI responses</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 3</div>
+                    <div class="timeline-content">
+                        <h4>Go Live</h4>
+                        <p>Full platform launch, monitoring & optimization, ongoing support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Value Propositions -->
+        <div class="section">
+            <h2>Why Choose Our Platform?</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0;">
+                <div style="padding: 20px; background: #f5f7fa; border-radius: 10px;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">🚀 Immediate Impact</h4>
+                    <p>Start capturing leads 24/7 from day one. Our AI chatbot never sleeps, ensuring you never miss an
+                        opportunity.</p>
+                </div>
+                <div style="padding: 20px; background: #f5f7fa; border-radius: 10px;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">💡 Malaysian Market Focus</h4>
+                    <p>Built specifically for Malaysian logistics companies, understanding local requirements and
+                        business practices.</p>
+                </div>
+                <div style="padding: 20px; background: #f5f7fa; border-radius: 10px;">
+                    <h4 style="color: #667eea; margin-bottom: 15px;">📈 Scalable Solution</h4>
+                    <p>Start small and grow. Upgrade seamlessly as your business expands without disrupting operations.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Services -->
+        <div class="section">
+            <h2>Additional Services</h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+                <div
+                    style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 style="font-size: 1.3em; margin-bottom: 15px;">🎯 Setup & Training</h4>
+                    <p style="margin-bottom: 20px; opacity: 0.95;">Comprehensive onboarding and team training</p>
+                    <div
+                        style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1.2em;">
+                        RM2,000 - RM5,000
+                        <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">One-time fee</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 style="font-size: 1.3em; margin-bottom: 15px;">🔌 Custom Integration</h4>
+                    <p style="margin-bottom: 20px; opacity: 0.95;">Connect with your existing systems</p>
+                    <div
+                        style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1.2em;">
+                        RM500/month
+                        <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">Per integration</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 style="font-size: 1.3em; margin-bottom: 15px;">🌐 Additional Microsites</h4>
+                    <p style="margin-bottom: 20px; opacity: 0.95;">Multiple brand presence</p>
+                    <div
+                        style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1.2em;">
+                        RM500/month
+                        <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">Each site</div>
+                    </div>
+                </div>
+
+                <div
+                    style="background:linear-gradient(135deg, #536de9 0%, #5a8cb3 100%); padding: 30px; border-radius: 15px; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+                    <h4 style="font-size: 1.3em; margin-bottom: 15px;">⚡ Excess AI Tokens</h4>
+                    <p style="margin-bottom: 20px; opacity: 0.95;">Beyond monthly allocation</p>
+                    <div
+                        style="background: rgba(255,255,255,0.2); padding: 10px 15px; border-radius: 8px; text-align: center; font-weight: 600; font-size: 1.2em;">
+                        RM20
+                        <div style="font-size: 0.8em; opacity: 0.9; margin-top: 5px;">Per 1,000 tokens</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-section" id="lead-form-section">
+            <h2 style="text-align: center; margin-bottom: 20px;">Get Started Today</h2>
+            <p style="text-align: center; font-size: 1.1em; color: #666; margin-bottom: 40px;">
+                Join the first 10 companies to enjoy exclusive early bird pricing. Fill in your details below and we'll
+                contact you within 24 hours.
+            </p>
+
+            <div class="form-container">
+                <form id="leadForm" action="#" method="POST">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="companyName">Company Name <span class="required">*</span></label>
+                            <input type="text" id="companyName" name="companyName" required
+                                placeholder="Your Company Sdn Bhd">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPerson">Contact Person <span class="required">*</span></label>
+                            <input type="text" id="contactPerson" name="contactPerson" required placeholder="Full Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="designation">Designation <span class="required">*</span></label>
+                            <input type="text" id="designation" name="designation" required
+                                placeholder="e.g., CEO, Operations Manager">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="email@company.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+60 XX-XXXX-XXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="companySize">Company Size <span class="required">*</span></label>
+                            <select id="companySize" name="companySize" required>
+                                <option value="">Select company size</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="200+">200+ employees</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="monthlyShipments">Monthly Shipments</label>
+                            <select id="monthlyShipments" name="monthlyShipments">
+                                <option value="">Select range</option>
+                                <option value="<100">Less than 100</option>
+                                <option value="100-500">100-500</option>
+                                <option value="500-1000">500-1000</option>
+                                <option value="1000+">More than 1000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentSystem">Current System</label>
+                            <input type="text" id="currentSystem" name="currentSystem"
+                                placeholder="e.g., Excel, Manual, Other software">
+                        </div>
+                    </div>
+
+                    <div class="pricing-interest">
+                        <h4>Which package are you interested in? <span class="required">*</span></h4>
+                        <div class="pricing-options">
+                            <div class="pricing-option">
+                                <input type="radio" id="basic" name="package" value="Basic" required>
+                                <label for="basic">Basic (RM1,499/month)</label>
+                            </div>
+                            <div class="pricing-option">
+                                <input type="radio" id="professional" name="package" value="Professional" required>
+                                <label for="professional">Professional (RM2,799/month)</label>
+                            </div>
+                            <div class="pricing-option">
+                                <input type="radio" id="business" name="package" value="Business" required>
+                                <label for="business">Business (RM3,999/month)</label>
+                            </div>
+                            <div class="pricing-option">
+                                <input type="radio" id="enterprise" name="package" value="Enterprise" required>
+                                <label for="enterprise">Enterprise (RM5,599/month)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="requirements">Specific Requirements or Questions</label>
+                        <textarea id="requirements" name="requirements"
+                            placeholder="Tell us about your specific needs, current challenges, or any questions you have..."></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">I would like to receive updates about new features and
+                            promotions</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the Terms & Conditions and Privacy Policy <span
+                                class="required">*</span></label>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </div>
+
+                    <div class="form-note">
+                        <p><strong>🔒 Your information is secure</strong><br>
+                            We respect your privacy and will only use your information to contact you about our
+                            services.<br>
+                            <strong>Limited Offer:</strong> Only 10 early bird slots remaining!
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h2>Ready to Transform Your Logistics Business?</h2>
+            <p style="font-size: 1.2em; margin-bottom: 30px;">
+                Join the digital revolution in Malaysian logistics. Be among the first 10 companies to enjoy exclusive
+                early bird pricing.
+            </p>
+            <div class="contact-info">
+                <h3>Get Started Today</h3>
+                <p>📧 Email: elson@gifs.group</p>
+                <p>📱 WhatsApp: +60 10-2967215</p>
+                <p>🌐 Website: www.gifs.group</p>
+                <p style="margin-top: 20px;"><strong>Limited Time Offer:</strong> First 10 customers get up to 25%
+                    discount!</p>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="section">
+            <h2>Terms & Conditions</h2>
+            <ul style="list-style: disc; margin-left: 30px; line-height: 1.8;">
+                <li>Early bird pricing requires 6-12 month commitment</li>
+                <li>Prices exclude SST/GST</li>
+                <li>Setup and training fees are one-time charges</li>
+                <li>Fair usage policy applies to unlimited plans</li>
+                <li>30-day money-back guarantee for new customers</li>
+                <li>Prices subject to review after initial contract period</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Smooth scroll to form
+        function scrollToForm() {
+            document.getElementById('lead-form-section').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Form submission handler
+        document.getElementById('leadForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Format email body
+            const emailBody = `
+                New Lead from LogisticAI Platform
+                
+                Company Details:
+                - Company Name: ${data.companyName}
+                - Contact Person: ${data.contactPerson}
+                - Designation: ${data.designation}
+                - Email: ${data.email}
+                - Phone: ${data.phone}
+                - Company Size: ${data.companySize}
+                - Monthly Shipments: ${data.monthlyShipments || 'Not specified'}
+                - Current System: ${data.currentSystem || 'Not specified'}
+                
+                Package Interest: ${data.package}
+                
+                Requirements/Questions:
+                ${data.requirements || 'None specified'}
+                
+                Newsletter: ${data.newsletter ? 'Yes' : 'No'}
+            `;
+
+            // For demonstration - in production, this would send to your backend
+            // You can integrate with your email service, API, or backend here
+            console.log('Form Data:', data);
+            console.log('Email Body:', emailBody);
+
+            // Show success message
+            alert('Thank you for your interest! We will contact you within 24 hours.\n\nNote: In production, this form would send an email to your specified address.');
+
+            // To implement email functionality, you can:
+            // 1. Use a backend service (Node.js, PHP, Python)
+            // 2. Use email services like EmailJS, Formspree, or Netlify Forms
+            // 3. Integrate with your CRM/email marketing platform
+            // 4. Use serverless functions (AWS Lambda, Vercel Functions)
+
+            // Example with EmailJS (add this after setting up EmailJS):
+            // emailjs.send('service_id', 'template_id', data)
+            //     .then(() => alert('Email sent successfully!'))
+            //     .catch((error) => console.error('Failed to send email:', error));
+
+            // Optional: Reset form after submission
+            // this.reset();
+        });
+
+        // Add interactive selection for pricing options
+        document.querySelectorAll('.pricing-option').forEach(option => {
+            option.addEventListener('click', function () {
+                // Remove selected class from all options
+                document.querySelectorAll('.pricing-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                // Check the radio button
+                this.querySelector('input[type="radio"]').checked = true;
+            });
+        });
+    </script>
+</body>
+
+</html>
